@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>%HOSTNAME%</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/"><i class="fa-solid fa-house-chimney" style="font-size:36px"></i></a>
+        <a href="/config"><i class="fa-solid fa-gear" style="font-size:36px;"></i></a>
+        <a href="/check"><i class="fa-solid fa-list-check" style="font-size:36px"></i></a>
+        <a href="%EXTERNAL_URL%" target="_blank"><i class="fa-solid fa-chart-line" style="font-size:36px"></i></a>
+        <a href="/update" target="_blank"><i class="fa-solid fa-upload" style="font-size:36px"></i></a>
+    </div>
+    
+    <div class="row">
+      <h2>Configuration Center</h2>
+        <center>
+          <table class="center">
+           <form action="/save-config">
+           <tr>
+            <td class="right">Hostname:</td>
+            <td><input type="text" name="HOSTNAME" value="%HOSTNAME%"></td>
+           </tr>
+           <tr>
+            <td class="right">WiFi-SSID:</td>
+            <td><input type="text" name="WLAN_SSID" value="%WIFI_SSID%" readonly></td>
+           </tr>
+           <tr>
+            <td class="right">WiFi-PW:</td>
+            <td><input type="password" name="WLAN_PW" value="%WIFI_PW%" readonly></td>
+           </tr>
+           <tr>
+            <td class="right">MQTT-Boker:</td>
+            <td><input type="text" name="MQTT_BROKER" value="%MQTT_BROKER%"></td>
+           </tr>
+           <tr>
+            <td class="right">Publish MQTT_Message [sec]:</td>
+            <td><input type="number" name="MQTT_PUBLISH_TIME" value="%MQTT_PUBLISH_TIME%"></td>
+            </tr>
+            <tr>
+            <td class="right">External URL:</td>
+            <td><input type="text" name="EXTERNAL_URL" value="%EXTERNAL_URL%"></td>
+           </tr>
+           <tr>
+            <td class="right">Voltage:</td>
+            <td><input type="number" name="VOLTAGE" value="%VOLTAGE%"></td>
+           </tr>
+           <tr>
+            <td class="right">Slope (SCT-013-010):</td>
+            <td><input type="number" name="SCT_013_010_SLOPE" value="%SCT_013_010_SLOPE%"></td>
+           </tr>
+           <tr>
+            <td class="right">Offset (SCT-013-010):</td>
+            <td><input type="number" name="SCT_013_010_OFFSET" value="%SCT_013_010_OFFSET%"></td>
+           </tr>
+
+           <tr>
+            <td></td>
+              <td><input type="submit" value="Submit"></td>
+           </tr>
+          </form>
+        </table>
+        </center>
+    <br>
+    </div>
+     
+    <div class="footer">&copy; by Sandholz Engineering (Version: %VERSION%)</div>
+    </body>
+</html>

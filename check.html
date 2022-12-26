@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>%HOSTNAME%</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.js" crossorigin="anonymous"></script>
+    <script>
+        function callRestAPI(URL) {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onload = function() {
+            document.getElementById("output").innerHTML = this.responseText;
+          }
+          xhttp.open("GET", "/power_meter", true);
+          xhttp.send();
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/"><i class="fa-solid fa-house-chimney" style="font-size:36px"></i></a>
+        <a href="/config"><i class="fa-solid fa-gear" style="font-size:36px;"></i></a>
+        <a href="/check"><i class="fa-solid fa-list-check" style="font-size:36px"></i></a>
+        <a href="%EXTERNAL_URL%" target="_blank"><i class="fa-solid fa-chart-line" style="font-size:36px"></i></a>
+        <a href="/update" target="_blank"><i class="fa-solid fa-upload" style="font-size:36px"></i></a>
+    </div>
+       
+    <div class="row">
+        <h2>Test RESTful API</h2>
+        <p><a href="#" onclick="callRestAPI('/power_meter')">Check Power Consumption</a></p>
+        <p><a href="#" onclick="location.href='/switch_heatpump_on'">Switch Heatpump ON</a></p>
+        <p><a href="#" onclick="location.href='/switch_heatpump_off'">Switch Heatpump OFF</a></p>
+        <p><a href="#" onclick="location.href='/switch_heatrod_on'">Switch Heatrod ON</a></p>
+        <p><a href="#" onclick="location.href='/switch_heatrod_off'">Switch Heatrod OFF</a></p>
+        <br>
+        <center><div class="check-result" id="output"></div></center>
+    </div> 
+    
+    <div class="footer">&copy; by Sandholz Engineering (Version: %VERSION%)</div>
+</body>
+</html>

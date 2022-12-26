@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>%HOSTNAME%</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="5" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/"><i class="fa-solid fa-house-chimney" style="font-size:36px"></i></a>
+        <a href="/config"><i class="fa-solid fa-gear" style="font-size:36px;"></i></a>
+        <a href="/check"><i class="fa-solid fa-list-check" style="font-size:36px"></i></a>
+        <a href="%EXTERNAL_URL%" target="_blank"><i class="fa-solid fa-chart-line" style="font-size:36px"></i></a>
+        <a href="/update" target="_blank"><i class="fa-solid fa-upload" style="font-size:36px"></i></a>
+    </div>
+      
+    <div class="row">
+        <h2>Heat Pump Control Center</h2>
+        <center>
+            <table>
+            <tr>
+                <td class="right">Heatpump Switch:</td>
+                <td><label class="switch">
+                    <input type="checkbox" onClick="location.href='%HEATPUMP_SWITCH%'"%HEATPUMP_STATE%>
+                    <span class="slider round"></span>
+                </label></td>
+            </tr>
+            <tr>
+                <td class="right">Heatpump L1:</td>
+                <td><strong> %POWER_HEATPUMP_L1% Watt</strong></td>
+            </tr>
+            <tr>
+                <td class="right">Heatpump L2:</td>
+                <td><strong> %POWER_HEATPUMP_L2% Watt</strong></td>
+            </tr>
+            <tr>
+                <td class="right">Heatpump L3:</td>
+                <td><strong> %POWER_HEATPUMP_L3% Watt</strong></td>
+            </tr>
+            <tr>
+                <td class="right">Heatpump Summary:</td>
+                <td><strong> %POWER_HEATPUMP% Watt</strong></td>
+            </tr>
+            </table>
+            <br>
+            <table>
+            <tr>
+                <td class="right">Heatrod Switch:</td>
+                <td><label class="switch">
+                    <input type="checkbox" onClick="location.href='%HEATROD_SWITCH%'"%HEATROD_STATE%>
+                    <span class="slider round"></span>
+                </label></td>
+                <tr>
+                    <td class="right">Heatrod Summary:</td>
+                    <td><strong> %POWER_HEATROD% Watt</strong></td>
+                </tr>
+            </tr>
+            </table>
+        </center><br>   
+    </div>
+    <div class="footer">&copy; by Sandholz Engineering (Version: %VERSION%)</div>
+</body>
+</html>

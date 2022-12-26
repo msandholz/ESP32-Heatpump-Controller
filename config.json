@@ -1,0 +1,9 @@
+{
+    "HOSTNAME":"ESP-HeatPump",
+    "MQTT_BROKER":"192.168.178.12",
+    "MQTT_PUBLISH_TIME": 10,
+    "EXTERNAL_URL":"http://192.168.178.71:3000/d/cLwyHTWgz/fermentation-control-system?orgId=1",
+    "VOLTAGE":235,
+    "SCT_013_010_SLOPE":3.53,
+    "SCT_013_010_OFFSET": 0
+  }
